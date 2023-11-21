@@ -4,7 +4,7 @@ const cors=require('cors')
 const conn=require('./connection/connection')
 require('dotenv').config();
 const path=require('path');
-const User=require('../models/users');
+const User=require('./models/users');
 
 // const __dirname=path.resolve();
 
