@@ -4,6 +4,7 @@ const cors=require('cors')
 const conn=require('./connection/connection')
 require('dotenv').config();
 const path=require('path');
+const User=require('../models/users');
 
 // const __dirname=path.resolve();
 
@@ -13,7 +14,11 @@ const list=require("./routes/list")
 app.use(express.json())
 app.use(cors())
 app.get("/",(req,res)=>{
-    res.send("Hello")
+    res.status(200).json({message:"Backend is live now"})
+})
+app.get("/users",async (req,res)=>{
+    const allusers=await User.find();
+    res.status(200).json({data:allusers});
 })
 
 
