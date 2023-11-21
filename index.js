@@ -15,7 +15,7 @@ const list=require("./routes/list")
 app.use(express.json())
 app.use(cors())
 app.get("/",(req,res)=>{
-    res.status(200).json({message:"Backend is live now",users:"give: <link>/users",lists:"give: <link>/lists",allTasksofuser: "give:<link>/getTasks/_id"})
+    res.status(200).json({message:"Backend is live now",users:"give: <link>/users",lists:"give: <link>/lists",allTasksofuser: "give:<link>/api/v2/getTasks/_id"})
 })
 app.get("/users",async (req,res)=>{
     const allusers=await User.find();
